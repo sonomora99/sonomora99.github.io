@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/sonomora99.github.io/static/css/main.dc3dcdae.chunk.css",
-    "main.js": "/sonomora99.github.io/static/js/main.cb336ed6.chunk.js",
-    "main.js.map": "/sonomora99.github.io/static/js/main.cb336ed6.chunk.js.map",
+    "main.js": "/sonomora99.github.io/static/js/main.d13fdb99.chunk.js",
+    "main.js.map": "/sonomora99.github.io/static/js/main.d13fdb99.chunk.js.map",
     "runtime-main.js": "/sonomora99.github.io/static/js/runtime-main.ac27324b.js",
     "runtime-main.js.map": "/sonomora99.github.io/static/js/runtime-main.ac27324b.js.map",
     "static/css/2.b133dd8b.chunk.css": "/sonomora99.github.io/static/css/2.b133dd8b.chunk.css",
@@ -26,6 +26,6 @@
     "static/css/2.b133dd8b.chunk.css",
     "static/js/2.97c374d4.chunk.js",
     "static/css/main.dc3dcdae.chunk.css",
-    "static/js/main.cb336ed6.chunk.js"
+    "static/js/main.d13fdb99.chunk.js"
   ]
 }
