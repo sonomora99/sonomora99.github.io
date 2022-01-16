@@ -3,7 +3,7 @@
   "name": "spotscol",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://localhost:5000",
+  "proxy": "https://qa-back-spots.herokuapp.com",
   "dependencies": {
     "@hookform/resolvers": "^2.8.1",
     "@reach/combobox": "^0.16.3",
