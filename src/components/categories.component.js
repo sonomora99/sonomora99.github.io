@@ -17,6 +17,7 @@ class Categories extends React.Component {
     render() {
         return <div>
             {
+                
             this.state.categories.map(category =>{
                 return <div  className="form-group "key={category.id}>
                 <button className={this.props.className} name="register"  type="button" data-toggle="modal" key={category.id} id={category.id} data-target="#modalHobbies" value={category.id} onClick={this.props.onClick}><i className=""></i> {category.name}  </button>
