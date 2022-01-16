@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 
 import { withRouter } from "react-router-dom";
 import axiosInstance from "../../services/axios.service";
-import { BASE_URL } from "../../variables";
 import PostPreview from "./post/postPreview.component";
 import SuggestedUser from "./users/suggestedUser.component";
 class Profile extends React.Component {
@@ -58,10 +57,10 @@ class Profile extends React.Component {
                                         :
                                         this.state.multimedia?.multimedia !== null ?
                                             this.state.multimedia?.extension !== "mp4" ?
-                                                <div className="profilebox" style={{ background: "linear-gradient( rgba(34,34,34,0.6), rgba(34,34,34,0.6)), url('" + BASE_URL + this.state.multimedia?.multimedia + "') no-repeat", backgroundSize: "cover", backgroundPosition: "center center", WebkitBackgroundSize: "cover", MozBackgroundSize: "cover", OBackgroundSize: "cover" }}>
+                                                <div className="profilebox" style={{ background: "linear-gradient( rgba(34,34,34,0.6), rgba(34,34,34,0.6)), url('" + process.env.REACT_APP_BASE_URL + this.state.multimedia?.multimedia + "') no-repeat", backgroundSize: "cover", backgroundPosition: "center center", WebkitBackgroundSize: "cover", MozBackgroundSize: "cover", OBackgroundSize: "cover" }}>
                                                 </div>
                                                 :
-                                                <video className="profilebox" style={{ opacity: "0.5", background: " linear-gradient( rgba(34,34,34,0.6), rgba(34,34,34,0.6))", backgroundSize: "cover", backgroundPosition: " center center", WebkitBackgroundSize: "cover", MozBackgroundSize: "cover", OBackgroundSize: "cover" }} onloadedmetadata="this.muted = true" volume="0" src={BASE_URL + this.state.multimedia?.multimedia}
+                                                <video className="profilebox" style={{ opacity: "0.5", background: " linear-gradient( rgba(34,34,34,0.6), rgba(34,34,34,0.6))", backgroundSize: "cover", backgroundPosition: " center center", WebkitBackgroundSize: "cover", MozBackgroundSize: "cover", OBackgroundSize: "cover" }} onloadedmetadata="this.muted = true" volume="0" src={process.env.REACT_APP_BASE_URL + this.state.multimedia?.multimedia}
                                                     preload="metadata" muted autoplay loop></video>
                                             :
                                             <div className="profilebox" style={{ background: "linear-gradient( rgba(34,34,34,0.6), rgba(34,34,34,0.6)),  no-repeat", backgroundSize: "cover", backgroundPosition: "center center", WebkitBackgroundSize: "cover", MozBackgroundSize: "cover", OBackgroundSize: "cover" }}>
@@ -72,7 +71,7 @@ class Profile extends React.Component {
                                 <Col lg={12} md={12} sm={12} xm={12}>
                                     <div className="post-content">
                                         <div className="author-post text-center">
-                                            <img className="img-fluid img-circle" src={BASE_URL + this.state.user.profile_img} ng-model="user"
+                                            <img className="img-fluid img-circle" src={process.env.REACT_APP_BASE_URL + this.state.user.profile_img} ng-model="user"
                                                 alt="Image" />
                                             <div className="content-box">
                                                 <h4>{this.state.user.name}</h4>
@@ -145,7 +144,7 @@ class Profile extends React.Component {
                                                 <div className="user-info">
                                                     <div className="image">
                                                         <a>
-                                                            <img src={BASE_URL + this.state.user.profile_img} className="img-responsive img-circle"
+                                                            <img src={process.env.REACT_APP_BASE_URL + this.state.user.profile_img} className="img-responsive img-circle"
                                                                 style={{ margin: "auto" }} alt="User" />
                                                         </a>
                                                     </div>

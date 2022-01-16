@@ -6,7 +6,7 @@ import '../assets/css/demos/photo.css';
 import spotsImage from "../assets/spotsLogo2.png";
 import { AuthContext } from '../auth/Auth.provider';
 import axiosInstance from "../services/axios.service";
-import { BASE_URL } from "../variables";
+
 
 class MainNavbar extends React.Component {
     static contextType = AuthContext;
@@ -64,7 +64,7 @@ class MainNavbar extends React.Component {
                                                     <div className="followers-body">
                                                         <div className="suggestion-box  full-width">
                                                             <div className="suggestion-body" style={{backgroundColor:notification.viewed==0?"#ff990063":"white"}}>
-                                                                <img className="img-responsive img-circle" style={{ width: "12%" }} src={BASE_URL + notification.user.profile_img} />
+                                                                <img className="img-responsive img-circle" style={{ width: "12%" }} src={process.env.REACT_APP_BASE_URL + notification.user.profile_img} />
                                                                 <div className="name-box">
                                                                     <h4>{notification.notification}</h4>
                                                                     <span>{moment(notification.updatedAt, "YYYYMMDD").fromNow()}</span>
@@ -102,7 +102,7 @@ class MainNavbar extends React.Component {
 
                             <li className=" mega-avatar list-inline-item">
                                 <span className="avatar w-32 nav-link  arrow-none waves-effect" style={{ paddingTop: "15px", paddingBottom: "15px" }}><img
-                                    className=" img-circle" src={BASE_URL + this.state.user?.profile_img} width="25" height="25" alt="..." />
+                                    className=" img-circle" src={process.env.REACT_APP_BASE_URL + this.state.user?.profile_img} width="25" height="25" alt="..." />
 
                                 </span>
 

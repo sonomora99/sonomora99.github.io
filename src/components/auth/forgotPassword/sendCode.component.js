@@ -4,7 +4,6 @@ import { useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup';
 import axiosInstance from '../../../services/axios.service';
-import { BASE_URL } from "../../../variables";
 
 const schema = yup.object().shape({
 
@@ -87,7 +86,7 @@ export default function SendCode(props) {
                 <Col lg={6} md={6}>
                     <span className="avatar">
 
-                        <img className="img-resonsive img-circle ng-pristine ng-untouched ng-valid ng-empty" width="35" height="35" alt="..." src={BASE_URL+user?.profile_img} /></span>
+                        <img className="img-resonsive img-circle ng-pristine ng-untouched ng-valid ng-empty" width="35" height="35" alt="..." src={process.env.REACT_APP_BASE_URL+user?.profile_img} /></span>
                 </Col>
                 <Col lg={6} md={6}>
                     <div className="row"><p >{user?.name}</p></div>

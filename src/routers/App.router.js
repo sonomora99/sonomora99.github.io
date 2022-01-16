@@ -1,5 +1,5 @@
 import React from 'react'
-import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
+import { HashRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import Error from '../components/404.component';
 import ForgotPassword from '../components/auth/forgotPassword.component';
 import Main from '../components/main.component';
@@ -14,7 +14,7 @@ export default function AppRouter(){
     return (
         <div className="back">
             
-            <Router>
+            <Router  >
                 <Switch>   
                     <Route exact path="/login" >
                     <Redirect to="/" />

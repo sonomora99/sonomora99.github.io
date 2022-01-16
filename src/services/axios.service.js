@@ -1,16 +1,16 @@
-import { BASE_URL } from "../variables";
+
 import Axios from "axios";
 
 
 const axiosInstance = Axios.create({
-    baseURL: BASE_URL
+    baseURL: process.env.REACT_APP_BASE_URL
 })
 
 const refreshToken = ()=>{
     const token = localStorage.getItem('xreftkn');
 
     if(token){
-        Axios.post(BASE_URL+"auth/refreshToken",{token}).then(res=>{
+        Axios.post(process.env.REACT_APP_BASE_URL+"auth/refreshToken",{token}).then(res=>{
             if(res.status===200){
                 localStorage.setItem('xacctkn',res.data.tkn);
                 localStorage.setItem('xreftkn',res.data.tkr);

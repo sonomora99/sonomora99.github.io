@@ -3,7 +3,6 @@ import { Carousel, Col, Container, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../../../auth/Auth.provider';
 import axiosInstance from '../../../services/axios.service';
-import { BASE_URL } from '../../../variables';
 import '../../../assets/css/demos/photo.css';
 import moment from 'moment';
 import CommentComponent from './comment.component';
@@ -192,8 +191,8 @@ class PostViewComponent extends React.Component {
                                 {
                                     multimedia.multimedia !== null?
                                         multimedia.extension !== "mp4"?
-                                        <img  className="d-block w-100" src={ BASE_URL + multimedia.multimedia} alt="First slide"/>
-                                        :<video className="d-block w-100" src={ BASE_URL + multimedia.multimedia} controls preload="metadata"></video>
+                                        <img  className="d-block w-100" src={ process.env.REACT_APP_BASE_URL + multimedia.multimedia} alt="First slide"/>
+                                        :<video className="d-block w-100" src={ process.env.REACT_APP_BASE_URL + multimedia.multimedia} controls preload="metadata"></video>
                                     :
                                     ""
                                    
@@ -211,7 +210,7 @@ class PostViewComponent extends React.Component {
                     <div className="modal-meta-pop">
                         <div className="img-poster clearfix">
                             <Link to={"/profile/"+ (this.state.post.user?.id!==this.state.user.id?this.state.post.user?.id:"")} >
-                                <img className="img-circle" width="37px" src={BASE_URL+this.state.post.user?.profile_img} />
+                                <img className="img-circle" width="37px" src={process.env.REACT_APP_BASE_URL+this.state.post.user?.profile_img} />
                             </Link>
                             <strong><Link to={"/profile/"+ (this.state.post.user?.id!==this.state.user.id?this.state.post.user?.id:"")}>
                                 <span className="m-">{this.state.post.user?.name}</span>
@@ -353,7 +352,7 @@ class PostViewComponent extends React.Component {
                                 return <li >
                                 <div className="comment-img">
                                     <Link to={"/profile/"+comment.user.id} >
-                                        <img src={BASE_URL+comment.user.profile_img} className="img-responsive img-circle"
+                                        <img src={process.env.REACT_APP_BASE_URL+comment.user.profile_img} className="img-responsive img-circle"
                                         alt={comment.user.nickname} />
                                     </Link>
                                 </div>

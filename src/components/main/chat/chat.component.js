@@ -1,7 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import useAuth from '../../../auth/useAuth';
-import { BASE_URL } from '../../../variables';
 
 export default function ChatComponent() {
     const auth = useAuth();
@@ -33,7 +32,7 @@ export default function ChatComponent() {
                                         <a href="#!messages/{{chats.de_usuario}}" ng-click="ch.marcarVisto(chats.de_usuario)">
                                             <div className="user-message-details">
                                                 <div className="user-message-img">
-                                                    <img src={BASE_URL + "assets/img/users/default-users.jpg"} className="img-responsive img-circle" alt="" />
+                                                    <img src={process.env.REACT_APP_BASE_URL + "assets/img/users/default-users.jpg"} className="img-responsive img-circle" alt="" />
 
                                                 </div>
                                                 <div className="user-message-info">
@@ -62,7 +61,7 @@ export default function ChatComponent() {
                                     
                                     <div className="user-message-details">
                                     <div className="user-message-img">
-                                        <img src={BASE_URL + "assets/img/users/default-users.jpg"} className="img-responsive img-circle" alt="" />
+                                        <img src={process.env.REACT_APP_BASE_URL + "assets/img/users/default-users.jpg"} className="img-responsive img-circle" alt="" />
 
                                     </div>
                                         <div className="user-message-info">
@@ -138,7 +137,7 @@ export default function ChatComponent() {
                                         <a href="#!messages/{{chats.de_usuario}}" ng-click="ch.marcarVisto(chats.de_usuario)">
                                             <div className="user-message-details">
                                                 <div className="user-message-img">
-                                                    <img src={BASE_URL + "assets/img/users/default-users.jpg"} className="img-responsive img-circle" alt="" />
+                                                    <img src={process.env.REACT_APP_BASE_URL + "assets/img/users/default-users.jpg"} className="img-responsive img-circle" alt="" />
 
                                                 </div>
                                                 <div className="user-message-info">

@@ -5,7 +5,7 @@ import { yupResolver} from '@hookform/resolvers/yup'
 import * as yup from 'yup';
 import useAuth from '../../auth/useAuth';
 import SingUpForm from './SingUp.component';
-
+import { Link, NavLink } from "react-router-dom";
 const schema = yup.object().shape({
   
     password: yup.string().required("La contraseña es obligatoria"),
@@ -57,7 +57,8 @@ export default function LoginForm() {
 
                     <label className="checkbox text-center">
                         <span className="text-center">
-                            <a href="/forgotPassword">Olvidaste tu contraseña?</a>
+                            {/* <a href="/forgotPassword">Olvidaste tu contraseña?</a> */}
+                            <NavLink to="/forgotPassword" >Olvidaste tu contraseña?</NavLink>
                         </span>
                     </label>
                 </div>

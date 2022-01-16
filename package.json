@@ -1,9 +1,9 @@
 {
-  "homepage": "http://sonomora99.github.io",
+  "homepage": "spotsFront",
   "name": "spotscol",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://qa-back-spots.herokuapp.com",
+  "proxy": "http://localhost:5000/",
   "dependencies": {
     "@hookform/resolvers": "^2.8.1",
     "@reach/combobox": "^0.16.3",

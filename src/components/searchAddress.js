@@ -1,7 +1,6 @@
 import React , {useState, useRef,useCallback}from 'react';
 
 import { GoogleMap,useLoadScript,Marker,InfoWindow} from "@react-google-maps/api"
-import { REACT_APP_GOOGLE_MAPS_API_KEY } from "../variables";
 
 
 import usePlacesAutocomplete,{
@@ -29,7 +28,7 @@ const libraries =["places"];
 export default function SearchAddres(props){
 
     const {isLoaded, loadError} = useLoadScript({
-        googleMapsApiKey:REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey:process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries
     }); 
     

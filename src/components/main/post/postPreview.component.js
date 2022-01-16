@@ -1,7 +1,6 @@
 import React from "react";
 import { Col, Dropdown } from "react-bootstrap";
 import { Link } from "react-router-dom";
-import { BASE_URL } from "../../../variables";
 import moment from 'moment';
 import axiosInstance from "../../../services/axios.service";
 import { AuthContext } from "../../../auth/Auth.provider";
@@ -136,7 +135,7 @@ class PostPreview extends React.Component {
                     <div className="media m-0">
                         <div className="d-flex mr-3">
                             <Link to={"/profile/" + (this.props.post.user.id!==this.state.user.id?this.props.post.user.id:"")}>
-                                <img className="img-responsive img-circle" src={BASE_URL + this.props.post.user.profile_img}
+                                <img className="img-responsive img-circle" src={process.env.REACT_APP_BASE_URL + this.props.post.user.profile_img}
                                     alt="User" />
                             </Link>
     
@@ -166,7 +165,7 @@ class PostPreview extends React.Component {
                             <Link to={"/post/" + this.props.post.user.nickname + "/" + this.props.post.id}>
                                 {
                                     this.state.multimedia[0].extension != "mp4" ? <img className="img-responsive"
-                                        src={BASE_URL + this.state.multimedia[0].multimedia} alt="MaterialImg" /> : <video className="img-responsive " volume="0" src={BASE_URL + this.state.multimedia[0].multimedia} preload="metadata" autoPlay muted ></video>
+                                        src={process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia} alt="MaterialImg" /> : <video className="img-responsive " volume="0" src={process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia} preload="metadata" autoPlay muted ></video>
                                 }
     
                             </Link>
@@ -225,7 +224,7 @@ class PostPreview extends React.Component {
                          this.state.multimedia[0].multimedia != null ?
                             this.state.multimedia[0].extension != "mp4" ?
                                 <div className="explorebox" style={{
-                                    background: "linear-gradient( rgba(34,34,34,0.2), rgba(34,34,34,0.2)), url('" + BASE_URL + this.state.multimedia[0].multimedia + "') no-repeat",
+                                    background: "linear-gradient( rgba(34,34,34,0.2), rgba(34,34,34,0.2)), url('" + process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia + "') no-repeat",
                                     backgroundSize: "cover",
                                     backgroundPosition: " center center",
                                     webkitBackgroundSize: "cover",
@@ -237,7 +236,7 @@ class PostPreview extends React.Component {
                                         {/* <div className="explore-circle pull-right"><i className="far fa-bookmark"></i></div>  */}
                                     </div>
                                     <div className="explore-body">
-                                        <div className=""><img className="img-circle" src={BASE_URL + this.props.post.user.profile_img} alt="user" /></div>
+                                        <div className=""><img className="img-circle" src={process.env.REACT_APP_BASE_URL + this.props.post.user.profile_img} alt="user" /></div>
                                     </div>
                                 </div>
                                 :
@@ -249,9 +248,9 @@ class PostPreview extends React.Component {
                                         {/* <!-- <div className="explore-circle pull-right"><i className="far fa-bookmark"></i></div> --> */}
                                     </div>
                                     <div className="explore-body" style={{ position: "absolute", marginTop: "41px", zIndex: "10000" }}>
-                                        <div className=""><img className="img-circle" src={BASE_URL + this.props.post.user.profile_img} alt="user" /></div>
+                                        <div className=""><img className="img-circle" src={process.env.REACT_APP_BASE_URL + this.props.post.user.profile_img} alt="user" /></div>
                                     </div>
-                                    <video className="explorebox" onloadedmetadata="true" volume="0" src={BASE_URL + this.state.multimedia[0].multimedia} style={{opacity: "0.7", height: "auto", backgroundColor: "rgba(34,34,34,1)", minWidth: "100%", minHeight: "100%"}} preload="metadata" autoplay muted >
+                                    <video className="explorebox" onloadedmetadata="true" volume="0" src={process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia} style={{opacity: "0.7", height: "auto", backgroundColor: "rgba(34,34,34,1)", minWidth: "100%", minHeight: "100%"}} preload="metadata" autoplay muted >
                                     </video>
                                 </div>
                             :
@@ -268,7 +267,7 @@ class PostPreview extends React.Component {
                                     {/* <div className="explore-circle pull-right"><i className="far fa-bookmark"></i></div> */}
                                 </div>
                                 <div className="explore-body">
-                                    <div className=""><img className="img-circle" src={BASE_URL + this.props.post.user.profile_img} alt="user" /></div>
+                                    <div className=""><img className="img-circle" src={process.env.REACT_APP_BASE_URL + this.props.post.user.profile_img} alt="user" /></div>
                                 </div>
                             </div>
                          :
@@ -288,7 +287,7 @@ class PostPreview extends React.Component {
                          this.state.multimedia.length!== 0?
                         this.state.multimedia[0].multimedia != null ?
                         this.state.multimedia[0].extension != "mp4" ?
-                        <div className="explorebox"  style={{background: "linear-gradient( rgba(34,34,34,0.2), rgba(34,34,34,0.2)), url('" + BASE_URL + this.state.multimedia[0].multimedia + "') no-repeat",
+                        <div className="explorebox"  style={{background: "linear-gradient( rgba(34,34,34,0.2), rgba(34,34,34,0.2)), url('" + process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia + "') no-repeat",
                         backgroundSize: "cover",
                         backgroundPosition: "center center",
                         WebkitBackgroundSize: "cover",
@@ -308,7 +307,7 @@ class PostPreview extends React.Component {
                                     
                         		</div>
     
-                        		<video  className="explorebox" onloadedmetadata="true" volume="0" src={BASE_URL + this.state.multimedia[0].multimedia}
+                        		<video  className="explorebox" onloadedmetadata="true" volume="0" src={process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia}
                         			style={{opacity: "0.7", height: "auto", backgroundColor: "rgba(34,34,34,1)", minWidth: "100%", minHeight: "100%"}}
                         			preload="metadata" autoplay muted>
                         		</video>
@@ -338,7 +337,7 @@ class PostPreview extends React.Component {
                          this.state.multimedia.length!== 0?
                         this.state.multimedia[0].multimedia != null ?
                         this.state.multimedia[0].extension != "mp4" ?
-                        <div className="explorebox"  style={{background: "linear-gradient( rgba(34,34,34,0.2), rgba(34,34,34,0.2)), url('" + BASE_URL + this.state.multimedia[0].multimedia + "') no-repeat",
+                        <div className="explorebox"  style={{background: "linear-gradient( rgba(34,34,34,0.2), rgba(34,34,34,0.2)), url('" + process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia + "') no-repeat",
                         backgroundSize: "cover",
                         backgroundPosition: "center center",
                         WebkitBackgroundSize: "cover",
@@ -358,7 +357,7 @@ class PostPreview extends React.Component {
                                     
                         		</div>
     
-                        		<video  className="explorebox" onloadedmetadata="true" volume="0" src={BASE_URL + this.state.multimedia[0].multimedia}
+                        		<video  className="explorebox" onloadedmetadata="true" volume="0" src={process.env.REACT_APP_BASE_URL + this.state.multimedia[0].multimedia}
                         			style={{opacity: "0.7", height: "auto", backgroundColor: "rgba(34,34,34,1)", minWidth: "100%", minHeight: "100%"}}
                         			preload="metadata" autoplay muted>
                         		</video>

@@ -1,6 +1,5 @@
 import React , {useState, useEffect,useCallback, useRef} from "react";
-import { GoogleMap,useLoadScript,Marker,InfoWindow} from "@react-google-maps/api"
-import { REACT_APP_GOOGLE_MAPS_API_KEY } from "../../variables";
+import { GoogleMap,useLoadScript,Marker,InfoWindow} from "@react-google-maps/api"   
 import axiosInstance from "../../services/axios.service";
 import useAuth from "../../auth/useAuth";
 import sportsImage from "../../assets/icons/sport.svg";
@@ -36,7 +35,7 @@ export default function Maps(){
     }, [])
 
     const {isLoaded, loadError} = useLoadScript({
-        googleMapsApiKey:REACT_APP_GOOGLE_MAPS_API_KEY,
+        googleMapsApiKey:process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
         libraries
     });
     const mapRef =  useRef()

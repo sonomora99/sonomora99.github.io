@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import useAuth from "../../../auth/useAuth";
 import axiosInstance from "../../../services/axios.service";
-import { BASE_URL } from "../../../variables";
 
 
 export default function CommentComponent(props) {
@@ -60,7 +59,7 @@ export default function CommentComponent(props) {
     return <ul className="list-group list-group-horizontal">
     <li>
         <span className="thumb-xs">
-            <img className="img-responsive img-circle" src={BASE_URL +user.profile_img}
+            <img className="img-responsive img-circle" src={process.env.REACT_APP_BASE_URL +user.profile_img}
                 alt="Image" style={{marginRight: "6px"}}/>
                 
         </span>

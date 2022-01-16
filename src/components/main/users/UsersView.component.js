@@ -3,7 +3,6 @@ import { Col } from "react-bootstrap";
 import { Link} from "react-router-dom";
 import { AuthContext } from "../../../auth/Auth.provider";
 import axiosInstance from "../../../services/axios.service";
-import { BASE_URL } from "../../../variables";
 
 class UserView extends React.Component {
     static contextType = AuthContext;
@@ -22,7 +21,7 @@ class UserView extends React.Component {
     designUser= {
         "Home": <div className="suggestion-body">
             <Link to={"/profile/"+(this.props.user.id!==this.state.user.id?this.props.user.id:"")} >
-                <img className="img-responsive img-circle" src={BASE_URL + this.props.user.profile_img} alt="User imgProfile" />
+                <img className="img-responsive img-circle" src={process.env.REACT_APP_BASE_URL + this.props.user.profile_img} alt="User imgProfile" />
                 <div className="name-box">
                     <h4>{this.props.user.name}</h4>
                     <span>{this.props.user.nickname}</span>
@@ -37,12 +36,12 @@ class UserView extends React.Component {
                     <div className="tr-post">
                         <div className="entry-header">
                             <div className="entry-thumbnail">
-                                <img className="img-fluid" src={BASE_URL + this.props.user.profile_img} alt="Image" />
+                                <img className="img-fluid" src={process.env.REACT_APP_BASE_URL + this.props.user.profile_img} alt="Image" />
                             </div>
                         </div>
                         <div className="post-content">
                             <div className="author-post text-center">
-                                <Link to={"/profile/"}><img className="img-fluid rounded-circle" src={BASE_URL + this.props.user.profile_img} alt="Image" /></Link>
+                                <Link to={"/profile/"}><img className="img-fluid rounded-circle" src={process.env.REACT_APP_BASE_URL + this.props.user.profile_img} alt="Image" /></Link>
                             </div>
                             <div className="card-content">
                                 <h4>{this.props.user.name}</h4>
@@ -61,7 +60,7 @@ class UserView extends React.Component {
         "follow": <Link to={"/profile/"+(this.props.user.id!==this.state.user.id?this.props.user.id:"")}>
             <div className="followers-body">
             
-                <img className="img-responsive img-circle" src={BASE_URL + this.props.user.profile_img}/>
+                <img className="img-responsive img-circle" src={process.env.REACT_APP_BASE_URL + this.props.user.profile_img}/>
                 <div className="name-box">
                     <h4>{this.props.user.name}</h4>
                     <span>{this.props.user.nickname}</span>

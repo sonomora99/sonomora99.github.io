@@ -1,7 +1,6 @@
 import React, { createContext, useEffect, useState } from "react";
 import axiosInstance from '../services/axios.service';
 import  {io} from 'socket.io-client'
-import { SOCKET_URL } from "../variables";
 
 export const AuthContext = createContext();
 
@@ -33,7 +32,7 @@ export default function AuthProvider({ children }) {
         })
     }
     useEffect(() => {
-        setSocket(io(SOCKET_URL))
+        setSocket(io(process.env.REACT_APP_SOCKET_URL))
         getUser()
         getNotifications()
         
