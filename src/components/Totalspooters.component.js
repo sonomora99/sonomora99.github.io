@@ -21,7 +21,7 @@ class TotalSpooters extends React.Component {
                     <i>
                         <h2>Spooters Registrados</h2>
                         <br></br>
-                        <h3>{this.state.totalSpooters}</h3>
+                        <p className="ng-binding">{this.state.totalSpooters}</p>
                     </i>
                 </Col>
             </Col>
