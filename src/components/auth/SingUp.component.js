@@ -133,7 +133,7 @@ export default function SingUpForm() {
                 Registrar</button>
             </div>
           </form>
-          <Modal show={show} onHide={handleClose} backdrop="static">
+          <Modal animation={false} show={show} onHide={handleClose} backdrop="static">
           <Modal.Header closeButton>
       </Modal.Header>
       <Modal.Body><Hobbies idCategory={idCategory} hobbies={hobbies} addHobbies={addHobbies}/></Modal.Body>
